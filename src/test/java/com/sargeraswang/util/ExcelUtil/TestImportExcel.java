@@ -5,10 +5,7 @@ package com.sargeraswang.util.ExcelUtil;
 
 import org.junit.Test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Collection;
 import java.util.Map;
 
@@ -18,7 +15,7 @@ import java.util.Map;
 public class TestImportExcel {
 
   @Test
-  public void importXls() throws FileNotFoundException {
+  public void importXls() throws IOException {
     File f=new File("src/test/resources/test.xls");
     InputStream inputStream= new FileInputStream(f);
     
@@ -28,10 +25,11 @@ public class TestImportExcel {
     for(Map m : importExcel){
       System.out.println(m);
     }
+    inputStream.close();
   }
 
   @Test
-  public void importXlsx() throws FileNotFoundException {
+  public void importXlsx() throws IOException {
     File f=new File("src/test/resources/test.xlsx");
     InputStream inputStream= new FileInputStream(f);
 
@@ -41,6 +39,7 @@ public class TestImportExcel {
     for(Map m : importExcel){
       System.out.println(m);
     }
+    inputStream.close();
   }
 
 }

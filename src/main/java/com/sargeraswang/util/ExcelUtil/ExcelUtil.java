@@ -536,11 +536,11 @@ public class ExcelUtil {
     }
 
     /**
-     * 驗證Cell類型是否正確
+     * 验证Cell类型是否正确
      *
      * @param cell    cell單元格
-     * @param field   欄位
-     * @param cellNum 第幾個欄位,用於errMsg
+     * @param field   栏位
+     * @param cellNum 第几个栏位,用于errMsg
      * @return
      */
     private static String validateCell(Cell cell, Field field, int cellNum) {
@@ -564,7 +564,7 @@ public class ExcelUtil {
         } else {
             List<CellType> cellTypes = Arrays.asList(cellTypeArr);
 
-            // 如果類型不在指定範圍內,並且沒有默認值
+            // 如果类型不在制定的范围内，并且没有默认值
             if (!(cellTypes.contains(cell.getCellTypeEnum()))
                     || StringUtils.isNotBlank(annoCell.defaultValue())
                     && cell.getCellTypeEnum() == CellType.STRING) {
